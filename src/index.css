@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F293D;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Glassmorphism surfaces */
+.glass-dock {
+  background: rgba(12, 15, 23, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  background: rgba(18, 23, 36, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card {
+  background: rgba(19, 24, 38, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(26, 33, 51, 0.85);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+}
+
+/* Range input styling for sleek music scrubber */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1F293D;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  height: 5px;
+  transition: height 0.15s ease;
+}
+
+input[type="range"]:hover {
+  height: 7px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #6366F1;
+  box-shadow: 0 0 10px #6366F1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:active::-webkit-slider-thumb {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Sound wave animated equalizer */
+.equalizer-bar {
+  width: 3px;
+  background-color: #6366F1;
+  border-radius: 3px;
+  animation: equalizerBounce 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes equalizerBounce {
+  0% { height: 4px; }
+  50% { height: 16px; }
+  100% { height: 8px; }
+}
+
+.equalizer-bar:nth-child(1) { animation-delay: 0.1s; }
+.equalizer-bar:nth-child(2) { animation-delay: 0.3s; }
+.equalizer-bar:nth-child(3) { animation-delay: 0.5s; }
+.equalizer-bar:nth-child(4) { animation-delay: 0.2s; }
+
+/* Glowing gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #A5B4FC 0%, #6366F1 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
